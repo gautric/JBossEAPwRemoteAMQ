@@ -58,4 +58,33 @@ ainsi que le connector
 
 ## Compilation de l'application
 
-Dans le repertoire RemoteAMQ
+Dans le repertoire RemoteAMQ, packager l'application via la commande maven.
+
+> mvn clean package
+
+puis pour le deploiement il suffira d'utiliser le plugin wilfly avec la commande suivante 
+
+> mvn wildfly:deploy
+
+
+## Execution du Sender
+
+Afin de verifier que tout ce passe correctement, 
+
+> curl localhost:8080/remote-amq/send
+
+vous devriez avoir le resultat suivant dans la sortie standard du serveur JBoss EAP
+
+```
+19:14:07,748 INFO  [stdout] (Thread-18 (ActiveMQ-client-global-threads)) Received Message from Remote Queue : This is message 1
+19:14:07,759 INFO  [stdout] (Thread-16 (ActiveMQ-client-global-threads)) Received Message from Remote Queue : This is message 2
+19:14:07,770 INFO  [stdout] (Thread-14 (ActiveMQ-client-global-threads)) Received Message from Remote Queue : This is message 3
+19:14:07,819 INFO  [stdout] (Thread-21 (ActiveMQ-client-global-threads)) Received Message from Remote Queue : This is message 4
+19:14:07,829 INFO  [stdout] (Thread-17 (ActiveMQ-client-global-threads)) Received Message from Remote Queue : This is message 5
+```
+
+
+## Link 
+
+* [Red Hat Official Documentation](https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.3/html/configuring_messaging/resource_adapters)
+* [Helloworld MBD](https://github.com/jboss-developer/jboss-eap-quickstarts/tree/7.3.x/helloworld-mdb)
