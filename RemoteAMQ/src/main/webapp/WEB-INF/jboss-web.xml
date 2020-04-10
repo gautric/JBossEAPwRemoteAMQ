@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jboss-web>
+  <context-root>remote-amq</context-root>
+  <resource-ref>
+    <res-ref-name>RemoteConnectionFactory</res-ref-name>
+    <res-type>javax.jms.ConnectionFactory</res-type>
+    <jndi-name>java:/RemoteJmsXA</jndi-name>
+  </resource-ref>
+  <resource-env-ref>
+    <resource-env-ref-name>RemoteQueue</resource-env-ref-name>
+    <jndi-name>java:/jms/queue/RemoteQueue</jndi-name>
+  </resource-env-ref>
+</jboss-web>
