@@ -72,6 +72,8 @@ puis pour le deploiement il suffira d'utiliser le plugin wilfly avec la commande
 Afin de verifier que tout ce passe correctement, 
 
 > curl localhost:8080/remote-amq/send
+Sending 5 messages to ActiveMQQueue[RemoteQueue}
+> 
 
 vous devriez avoir le resultat suivant dans la sortie standard du serveur JBoss EAP
 
